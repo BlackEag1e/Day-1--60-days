@@ -1,0 +1,75 @@
+MISSING NUMBERS
+
+code:
+ sum=0
+for i in range(0,len(nums)+1):
+	sum=sum+i
+for j in nums:
+	sum=sum-j
+return sum
+
+
+Algorithm
+(Learned)
+1.get the sum of all the integer from o to  length of the list
+2.then subtract the interger in the given list from sum
+3.the missing number value would be inthe sum
+4.print or return sum
+
+(my sol)
+1.check whether all the interger is present by incrementiing a variable
+2.if the inc var is not equal to i in list
+3.return i
+
+
+
+SINGLE NUMBER
+
+(learned) solved using hashmap
+
+code:
+ a={}
+        for i in nums:
+            if i not in a:
+                a[i]=1
+            else:
+               del a[i]
+        return list(a.keys())[0]
+
+
+algorithm:
+1.create a dictinory
+2.for every integer in nums(list) increament the key values
+3.if key increments more than 1 
+4.del the element
+5.once the traverse is over return the value in dic
+
+
+
+REMOVE DUPLICATE FROM SORTED ARRAY
+
+learned (Solved using Double pointer)
+code:
+
+  def removeDuplicates(self, nums: List[int]) -> int:
+        l=1
+        r=1
+        while r<len(nums):
+            if(nums[r]!=nums[r-1]):
+                nums[l]=nums[r]
+                r+=1
+                l+=1
+            else:
+                r+=1
+        return l
+
+
+algorithm:
+
+1.let var l and r be pointer left and right
+2.using r we can traverse the nums(list)
+3.if r is equal to previous value r-1 its a duplicate inc r
+4.if r is not equal then change the value of l with r and inc l
+5.once the loop ends
+6.return the value
+
